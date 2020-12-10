@@ -3,14 +3,14 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
-    name: web-app
-  name: web-app
+    name: web-app2
+  name: web-app2
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: docker-web-app
-  namespace: web-app
+  namespace: web-app2
 spec:
   ports:
   - port: 80
@@ -24,7 +24,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: docker-web-app
-  namespace: web-app
+  namespace: web-app2
   labels:
     app: docker-web-app
   annotations:
